@@ -28,7 +28,7 @@ Population size should be around 50-100, crossover chance should be less than 1/
 #### New list of chromosomes is created.
 #### Two chromosomes are selected randomly, but biased towards higher fitness.
 #### There is a chance the crossover will occur and sequences will be overlapped to the sons chromosomes.
-#### There is a chance that a mutation will occur and change the sequence/genes at a single character.
+#### There is a chance that a mutation will occur and change the sequence/genes randomly.
 #### These two chromosomes are added to the the the new list.
 #### After the new list of chromosomes reaches the population size, the older population is replaced.
 #### New generation fitness will be evaluated.
