@@ -14,14 +14,14 @@ public class Chromosome
     }
 	
     public Chromosome(string sequence)
-	{
-		Sequence = sequence;
-	}
+    {
+        Sequence = sequence;
+    }
 	
     public void SetFitness(double fitness)
-	{
-		Fitness = fitness;
-	}
+    {
+        Fitness = fitness;
+    }
   
     public void Mutate(double probMutation, int length, Random random, string alphabet)
     {
@@ -62,8 +62,8 @@ public class Genome
     {
         FitnessFunction = fitnessFunction;
         ChromosomeLength = chromosomeLength;
-		Alphabet = alphabet;
-		PopulationSize = populationSize;
+        Alphabet = alphabet;
+        PopulationSize = populationSize;
         SeedInitialPopulation(PopulationSize);
     }
 
@@ -111,10 +111,10 @@ public class Genome
         {
             accum += (Population[i].Fitness / TotalFitness);
             if (p < accum) 
-              return i;
+                return i;
         }
     
-      return PopulationSize - 1;
+        return PopulationSize - 1;
     }
     
     public void SeedInitialPopulation(int length)
@@ -158,8 +158,8 @@ public class Genome
             childOne.Mutate(probMutation, ChromosomeLength, random, Alphabet);
             childTwo.Mutate(probMutation, ChromosomeLength, random, Alphabet);
             
-			childTwo.SetFitness(FitnessFunction(childTwo.Sequence));
-			childOne.SetFitness(FitnessFunction(childOne.Sequence));
+            childTwo.SetFitness(FitnessFunction(childTwo.Sequence));
+            childOne.SetFitness(FitnessFunction(childOne.Sequence));
 			
             newPopulation.Add(childOne);
             newPopulation.Add(childTwo);
