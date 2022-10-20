@@ -183,15 +183,15 @@ public static class GeneticAlgorithm
                                                  double probMutation, int numberOfGenerations = 10000)
     {
         var genome = new Genome(chromosomeLength, fitness, alphabet, populationSize);
-		var index = 0;
+        var index = 0;
 		
         while (++index < numberOfGenerations)
         {
             var population = genome.GetPopulation();
             var bestFitnessInThisGeneration = population.OrderByDescending(p => p.Fitness).FirstOrDefault();
 			
-           	Console.WriteLine("Generation: " + index);
-			Console.WriteLine("Best fitness: " + bestFitnessInThisGeneration.Sequence);
+            Console.WriteLine("Generation: " + index);
+            Console.WriteLine("Best fitness: " + bestFitnessInThisGeneration.Sequence);
 			
             if (bestFitnessInThisGeneration.Fitness == 1)      
                 return bestFitnessInThisGeneration.Sequence;
@@ -199,7 +199,7 @@ public static class GeneticAlgorithm
             genome.EvolvePopulation(probCrossover, probMutation);
         }
 		
-		return string.Empty;
+        return string.Empty;
     }
 }
 
