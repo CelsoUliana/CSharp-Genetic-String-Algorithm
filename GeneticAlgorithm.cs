@@ -55,7 +55,7 @@ public class Genome
     private static int ChromosomeLength;
     private static int PopulationSize;
     private static double TotalFitness;
-	private static string Alphabet;
+    private static string Alphabet;
     private static Func<string, double> FitnessFunction;
 
     public Genome(int chromosomeLength, Func<string, double> fitnessFunction, string alphabet, int populationSize)
