@@ -13,12 +13,12 @@ public class Chromosome
         Fitness = fitness;
     }
 	
-	public Chromosome(string sequence)
+    public Chromosome(string sequence)
 	{
 		Sequence = sequence;
 	}
 	
-	public void SetFitness(double fitness)
+    public void SetFitness(double fitness)
 	{
 		Fitness = fitness;
 	}
@@ -32,7 +32,7 @@ public class Chromosome
         }
     }
 	
-	public static char RandomChar(Random random, string alphabet)
+    public static char RandomChar(Random random, string alphabet)
     {
         return Enumerable.Repeat(alphabet, 1)
             .Select(s => s[random.Next(s.Length)]).First();
@@ -115,7 +115,7 @@ public class Genome
         }
     
       return PopulationSize - 1;
-  	}
+    }
     
     public void SeedInitialPopulation(int length)
     {
@@ -205,36 +205,36 @@ public static class GeneticAlgorithm
 
 public static class FitnessFunction
 {
-	public static Func<string, double> Fitness(string goal)
-	{
-		return new Func<string, double>(chromosome => {
-			double total = 0;
+    public static Func<string, double> Fitness(string goal)
+    {
+        return new Func<string, double>(chromosome => {
+            double total = 0;
 
-			for (int i = 0; i < goal.Length; i++)
-			{
-				if (goal[i] != chromosome[i])
-				{
-					total++;
-				}
-			}
+            for (int i = 0; i < goal.Length; i++)
+            {
+                if (goal[i] != chromosome[i])
+                {
+                    total++;
+                }
+            }
 
-			return 1.0 / (total + 1);
-		});
-	}	
+            return 1.0 / (total + 1);
+        });
+    }	
 }
 
 public class Program
 {
 	
-	public static void Main()
-	{
-		string goal = "hello world!";
-		string alphabet = "abcdefghijklmnopqrstuvwxyz !";
-		int populationSize = 70;
+    public static void Main()
+    {
+        string goal = "hello world!";
+        string alphabet = "abcdefghijklmnopqrstuvwxyz !";
+        int populationSize = 70;
 
         var foundWord = GeneticAlgorithm
             .FindGeneticString(FitnessFunction.Fitness(goal), alphabet, populationSize, goal.Length, 0.4, 0.02);
             
-		Console.WriteLine(foundWord);
-	}
+        Console.WriteLine(foundWord);
+    }
 }
