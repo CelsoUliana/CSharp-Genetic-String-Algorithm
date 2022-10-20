@@ -134,7 +134,7 @@ public class Genome
     public void EvolvePopulation(double probCrossover, double probMutation)
     {
         List<Chromosome> newPopulation = new List<Chromosome>();
-        while (newPopulation.Count != PopulationSize)
+        while (newPopulation.Count <= PopulationSize)
         {
             int indexOne = RouletteSelection();
             int indexTwo = RouletteSelection();
