@@ -1,5 +1,5 @@
 # CSharp-Genetic-String-Algorithm
-A simple C# implementation of a genetic string algorithm. Made to work with online C# compilers (single file)
+A simple C# implementation of a genetic string algorithm made with OOP. Made to work with online C# compilers (single file)
 Such as [.NET fiddle](https://dotnetfiddle.net/).
 
 Works with strings in general, just need to alter the alphabet (represents all possible characters for the problem, could be binary for example).
